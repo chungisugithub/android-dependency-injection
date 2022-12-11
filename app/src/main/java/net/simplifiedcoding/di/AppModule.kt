@@ -14,7 +14,7 @@ class AppModule(
 
     @Singleton
     @Provides
-    fun provideAuthApi(remoteDataSource: RemoteDataSource) {
+    fun provideAuthApi(remoteDataSource: RemoteDataSource) : AuthApi {
         return remoteDataSource.buildApi(AuthApi::class.java, context)
     }
 }
