@@ -19,7 +19,7 @@ class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        appContainer.authContainer = AuthContainer(appContainer.)
+        appContainer.authContainer = AuthContainer(appContainer.authRepository)
         setContentView(R.layout.activity_auth)
     }
 }
