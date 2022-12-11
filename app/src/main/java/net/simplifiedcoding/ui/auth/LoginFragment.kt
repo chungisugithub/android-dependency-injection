@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import dagger.android.support.AndroidSupportInjection
 import kotlinx.coroutines.launch
 import net.simplifiedcoding.R
 import net.simplifiedcoding.data.UserPreferences
@@ -32,7 +33,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-
+        AndroidSupportInjection,inject(this)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
