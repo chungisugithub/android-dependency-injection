@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Toast
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.runBlocking
+import net.simplifiedcoding.MyApplication
 import net.simplifiedcoding.R
 import net.simplifiedcoding.data.UserPreferences
 import net.simplifiedcoding.di.AppContainer
@@ -18,6 +19,7 @@ class AuthActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        appContainer = (application as MyApplication).appContainer
 
         appContainer.authContainer = AuthContainer(appContainer.authRepository)
         setContentView(R.layout.activity_auth)
