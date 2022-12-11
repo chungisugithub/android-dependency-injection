@@ -1,8 +1,12 @@
 package net.simplifiedcoding.ui.auth
 
-class AuthViewModelFactory : Factory<AuthViewModel> {
+import net.simplifiedcoding.data.repository.AuthRepository
+
+class AuthViewModelFactory(
+    private val authRepository: AuthRepository
+) : Factory<AuthViewModel> {
     override fun create(): AuthViewModel {
-        return AuthViewModel()
+        return AuthViewModel(authRepository)
     }
 
 }
