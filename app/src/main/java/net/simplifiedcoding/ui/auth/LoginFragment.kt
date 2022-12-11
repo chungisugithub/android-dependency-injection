@@ -1,5 +1,6 @@
 package net.simplifiedcoding.ui.auth
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.core.widget.addTextChangedListener
@@ -28,6 +29,11 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private lateinit var binding: FragmentLoginBinding
     @Inject lateinit var viewModel: AuthViewModel
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
