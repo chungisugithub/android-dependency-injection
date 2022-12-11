@@ -1,4 +1,5 @@
 package net.simplifiedcoding.ui.auth
 
-interface Factory {
+interface Factory<T> {
+    fun create() : T
 }
