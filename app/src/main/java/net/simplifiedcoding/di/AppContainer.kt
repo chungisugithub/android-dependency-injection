@@ -11,4 +11,6 @@ class AppContainer(context: Context) {
     private val api = remoteDataSource.buildApi(AuthApi::class.java, context)
     private val preferences = UserPreferences(context)
     private val authRepository = AuthRepository(api, preferences)
+
+    val authContainer: AuthContainer? = null
 }
