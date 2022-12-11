@@ -8,7 +8,7 @@ import net.simplifiedcoding.data.repository.AuthRepository
 
 class AppContainer(context: Context) {
     val remoteDataSource = RemoteDataSource()
-    val api = remoteDataSource.buildApi(AuthApi::class.java, requireContext())
-    val preferences = UserPreferences(requireContext())
+    val api = remoteDataSource.buildApi(AuthApi::class.java, context)
+    val preferences = UserPreferences(context)
     val authRepository = AuthRepository(api, preferences)
 }
