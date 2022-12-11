@@ -8,5 +8,5 @@ import net.simplifiedcoding.ui.auth.LoginFragment
 abstract class LoginFragmentModule {
 
     @ContributesAndroidInjector
-    fun contributeLoginFragmentInjector() : LoginFragment
+    abstract fun contributeLoginFragmentInjector() : LoginFragment
 }
