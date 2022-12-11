@@ -22,4 +22,10 @@ class AuthActivity : AppCompatActivity() {
         appContainer.authContainer = AuthContainer(appContainer.authRepository)
         setContentView(R.layout.activity_auth)
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        appContainer.authContainer = null
+    }
 }
