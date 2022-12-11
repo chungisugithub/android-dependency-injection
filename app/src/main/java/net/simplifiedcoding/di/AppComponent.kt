@@ -3,7 +3,9 @@ package net.simplifiedcoding.di
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import net.simplifiedcoding.MyApplication
+import javax.inject.Singleton
 
+@Singleton
 @Component(modules = [
     AndroidInjectionModule::class,
     LoginFragmentModule::class,
