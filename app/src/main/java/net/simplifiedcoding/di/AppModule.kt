@@ -1,5 +1,6 @@
 package net.simplifiedcoding.di
 
+import android.content.Context
 import dagger.Module
 import dagger.Provides
 import net.simplifiedcoding.data.network.AuthApi
@@ -8,12 +9,12 @@ import javax.inject.Singleton
 
 @Module
 class AppModule(
-
+    private val context: Context
 ) {
 
     @Singleton
     @Provides
     fun provideAuthApi(remoteDataSource: RemoteDataSource) {
-        remoteDataSource.buildApi(AuthApi::class.java,)
+        return remoteDataSource.buildApi(AuthApi::class.java, context)
     }
 }
