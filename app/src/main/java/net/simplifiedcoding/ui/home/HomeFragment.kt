@@ -5,7 +5,6 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import dagger.hilt.android.AndroidEntryPoint
 import net.simplifiedcoding.R
 import net.simplifiedcoding.data.UserPreferences
 import net.simplifiedcoding.data.network.AuthApi
