@@ -9,6 +9,7 @@ import kotlinx.coroutines.runBlocking
 import net.simplifiedcoding.R
 import net.simplifiedcoding.data.UserPreferences
 import net.simplifiedcoding.di.AppContainer
+import net.simplifiedcoding.di.AuthContainer
 import javax.inject.Inject
 
 class AuthActivity : AppCompatActivity() {
@@ -17,6 +18,8 @@ class AuthActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        appContainer.authContainer = AuthContainer(appContainer.)
         setContentView(R.layout.activity_auth)
     }
 }
