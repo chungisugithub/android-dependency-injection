@@ -12,5 +12,5 @@ class AppContainer(context: Context) {
     private val preferences = UserPreferences(context)
     val authRepository = AuthRepository(api, preferences)
 
-    val authContainer: AuthContainer? = null
+    var authContainer: AuthContainer? = null
 }
