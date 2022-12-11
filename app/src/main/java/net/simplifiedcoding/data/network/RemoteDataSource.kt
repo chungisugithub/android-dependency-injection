@@ -42,10 +42,13 @@ class RemoteDataSource @Inject constructor() {
     }
 
     private fun getRetrofitClient(context: Context,authenticator: Authenticator? = null): OkHttpClient {
-        val appContext = context.applicationContext
-        val userPreferences = UserPreferences(appContext)
+        var accessToken:String? = null;
+        if (authenticator != null) {
+            val appContext = context.applicationContext
+            val userPreferences = UserPreferences(appContext)
+            accessToken = runBlocking { userPreferences.accessToken.first() }
+        }
 
-        val accessToken = runBlocking { userPreferences.accessToken.first() }
 
         return OkHttpClient.Builder()
             .addInterceptor { chain ->
