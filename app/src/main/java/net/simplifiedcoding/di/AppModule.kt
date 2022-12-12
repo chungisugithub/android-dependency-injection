@@ -15,6 +15,6 @@ object AppModule {
 
     @Provides
      fun provideAuthApi(@ApplicationContext context: Context, remoteDataSource: RemoteDataSource) : AuthApi {
-
+        return remoteDataSource.buildApi(AuthApi::class.java, context)
      }
 }
