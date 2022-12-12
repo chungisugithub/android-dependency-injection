@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import net.simplifiedcoding.R
 import net.simplifiedcoding.data.UserPreferences
@@ -20,13 +21,13 @@ import net.simplifiedcoding.ui.handleApiError
 import net.simplifiedcoding.ui.home.HomeActivity
 import net.simplifiedcoding.ui.startNewActivity
 import net.simplifiedcoding.ui.visible
-import javax.inject.Inject
 
 
+@AndroidEntryPoint
 class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private lateinit var binding: FragmentLoginBinding
-    @Inject lateinit var remoteDataSource: RemoteDataSource
+
     private val viewModel: AuthViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
