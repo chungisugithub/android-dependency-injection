@@ -34,12 +34,6 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentLoginBinding.bind(view)
 
-        val remoteDataSource = RemoteDataSource()
-        val api = remoteDataSource.buildApi(AuthApi::class.java, requireContext())
-        val preferences = UserPreferences(requireContext())
-        val authRepository = AuthRepository(api, preferences)
-        viewModel = AuthViewModel(authRepository)
-
         binding.progressbar.visible(false)
         binding.buttonLogin.enable(false)
 
