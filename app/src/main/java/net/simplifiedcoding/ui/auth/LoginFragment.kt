@@ -19,13 +19,14 @@ import net.simplifiedcoding.ui.handleApiError
 import net.simplifiedcoding.ui.home.HomeActivity
 import net.simplifiedcoding.ui.startNewActivity
 import net.simplifiedcoding.ui.visible
+import javax.inject.Inject
 
 
 class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private lateinit var binding: FragmentLoginBinding
 
-    private lateinit var viewModel: AuthViewModel
+    @Inject lateinit var viewModel: AuthViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
